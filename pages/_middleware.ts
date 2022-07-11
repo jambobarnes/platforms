@@ -26,7 +26,7 @@ export default function middleware(req: NextRequest) {
   // JB - THIS WILL HANDLE A REDIRECT BACK TO ANOTHER SITE, e.g. if the app is at app.cliniccal.co.uk but you want people to go via cliniccal.co.uk
   // you can use this hostname based redirect
   // if (hostname === "localhost:3000") {
-  //   return NextResponse.redirect("https://demo.cliniccal.com");
+  //   return NextResponse.redirect("https://app.cliniccal.com");
   // }
 
   /*  You have to replace ".cliniccal.com" with your own domain if you deploy this example under your domain.
