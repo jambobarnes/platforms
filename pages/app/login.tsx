@@ -61,18 +61,10 @@ export default function Login() {
           />
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Platforms Starter Kit
+          Welcome to Cliniccal
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Build multi-tenant applications with custom domains. <br /> Read the{" "}
-          <a
-            className="font-medium text-black hover:text-gray-800"
-            href="https://demo.vercel.pub/platforms-starter-kit"
-            rel="noreferrer"
-            target="_blank"
-          >
-            blog post
-          </a>
+          Login or register to continue
         </p>
       </div>
 

@@ -22,6 +22,10 @@ export async function createDomain(
     return res.status(400).end("Bad request. Query parameters are not valid.");
 
   try {
+
+    console.log('Vercel ID', process.env.VERCEL_PROJECT_ID);
+    console.log('Vercel Team', process.env.VERCEL_TEAM_ID);
+
     const response = await fetch(
       `https://api.vercel.com/v8/projects/${process.env.VERCEL_PROJECT_ID}/domains?teamId=${process.env.VERCEL_TEAM_ID}`,
       {

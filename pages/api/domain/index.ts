@@ -10,11 +10,13 @@ export default async function domain(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+
   const session = await getServerSession({ req, res }, authOptions);
   if (!session) return res.status(401).end();
 
   switch (req.method) {
     case HttpMethod.POST:
+      console.log('got to this bit')
       return createDomain(req, res);
     case HttpMethod.DELETE:
       return deleteDomain(req, res);

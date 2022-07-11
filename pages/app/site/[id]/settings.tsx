@@ -238,7 +238,7 @@ export default function SiteSettings() {
             )}
           </div>
           <div className="flex flex-col space-y-6">
-            <h2 className="font-cal text-2xl">Custom Domain</h2>
+            <h2 className="font-cal text-2xl"></h2>
             {settings?.customDomain ? (
               <DomainCard data={data} />
             ) : (
@@ -260,7 +260,7 @@ export default function SiteSettings() {
                         customDomain: (e.target as HTMLTextAreaElement).value,
                       }));
                     }}
-                    pattern="^(?:[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.)?[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$"
+                    // pattern="^(?:[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.)?[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$"
                     placeholder="mydomain.com"
                     value={data.customDomain || ""}
                     type="text"
