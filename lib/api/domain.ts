@@ -23,11 +23,11 @@ export async function createDomain(
 
   try {
 
-    console.log('Vercel ID', process.env.VERCEL_PROJECT_ID);
-    console.log('Vercel Team', process.env.VERCEL_TEAM_ID);
+    console.log('Vercel ID', process.env.NEXT_PUBLIC_VERCEL_PROJECT_ID);
+    console.log('Vercel Team', process.env.NEXT_PUBLIC_VERCEL_TEAM_ID);
 
     const response = await fetch(
-      `https://api.vercel.com/v8/projects/${process.env.VERCEL_PROJECT_ID}/domains?teamId=${process.env.VERCEL_TEAM_ID}`,
+      `https://api.vercel.com/v8/projects/${process.env.NEXT_PUBLIC_VERCEL_PROJECT_ID}/domains?teamId=${process.env.NEXT_PUBLIC_VERCEL_TEAM_ID}`,
       {
         body: `{\n  "name": "${domain}"\n}`,
         headers: {
@@ -83,7 +83,7 @@ export async function deleteDomain(
 
   try {
     const response = await fetch(
-      `https://api.vercel.com/v6/domains/${domain}?teamId=${process.env.VERCEL_TEAM_ID}`,
+      `https://api.vercel.com/v6/domains/${domain}?teamId=${process.env.NEXT_PUBLIC_VERCEL_TEAM_ID}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
