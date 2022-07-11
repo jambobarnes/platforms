@@ -20,6 +20,8 @@ export default async function requestDelegation(
       }
     );
 
+    console.log('DELEGATION', response)
+
     res.status(response.ok ? 200 : 403).end();
   } catch (error) {
     console.error(error);
