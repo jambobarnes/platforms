@@ -31,7 +31,7 @@ export async function createDomain(
       {
         body: `{\n  "name": "${domain}"\n}`,
         headers: {
-          Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_BEARER_TOKEN}`,
           "Content-Type": "application/json",
         },
         method: HttpMethod.POST,
@@ -39,6 +39,8 @@ export async function createDomain(
     );
 
     const data = await response.json();
+
+    console.log('DOMAIN RESPONSE DATA', data)
 
     // Domain is already owned by another team but you can request delegation to access it
     if (data.error?.code === "forbidden") return res.status(403).end();
@@ -86,7 +88,7 @@ export async function deleteDomain(
       `https://api.vercel.com/v6/domains/${domain}?teamId=${process.env.NEXT_PUBLIC_VERCEL_TEAM_ID}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_BEARER_TOKEN}`,
         },
         method: HttpMethod.DELETE,
       }
